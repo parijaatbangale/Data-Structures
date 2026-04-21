@@ -1,0 +1,160 @@
+NODE createNode(int data) {
+    NODE temp = (NODE)malloc(sizeof(struct node));
+    temp->data = data;
+    temp->next = NULL;
+    return temp;  }
+
+	if (n <= 0)
+        return NULL;
+
+    NODE first = NULL, last = NULL, temp;
+    int x;
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &x);
+        temp = createNode(x);
+
+        if (first == NULL) {
+            first = last = temp;
+        } else {
+            last->next = temp;
+            last = temp;
+        }
+	}
+ last->next = first;  return first; 
+}
+
+
+int countNodes(NODE first) {
+    if (first == NULL)
+        return 0;
+
+    int count = 0;
+    NODE temp = first;
+
+    do {
+        count++;
+        temp = temp->next;
+    } while (temp != first);
+
+    return count;
+
+if (first == NULL)
+        return;
+
+    NODE temp = first;
+
+    do {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    } while (temp != first);
+
+    printf("\n");
+
+int n = countNodes(first);
+
+    if (pos < 1 || pos > n + 1) {
+        printf("Position not found\n");
+        return first;
+    }
+
+    NODE temp = createNode(x);
+
+    if (pos == 1) {
+        if (first == NULL) {
+            temp->next = temp;
+            return temp;
+        }
+
+        NODE last = first;
+        while (last->next != first)
+            last = last->next;
+temp->next = first;
+        last->next = temp;
+        return temp;
+    }
+
+    NODE curr = first;
+    for (int i = 1; i < pos - 1; i++)
+        curr = curr->next;
+
+    temp->next = curr->next;
+    curr->next = temp;
+
+    return first;
+
+ int n= countNodes(first);
+    if (pos < 1 || pos > n) {
+        printf("Position not found\n");
+        return first;
+    }
+
+    NODE temp = first;
+
+    if (pos == 1) {
+        if (first->next == first) {
+            printf("Deleted element: %d\n", first->data);
+            free(first);
+            return NULL;
+        }
+
+        NODE last = first;
+        while (last->next != first)
+            last = last->next;
+ printf("Deleted element: %d\n", first->data);
+
+        first = first->next;
+        last->next = first;
+        free(temp);
+
+        return first;
+    }
+
+    NODE prev = first;
+    for (int i = 1; i < pos - 1; i++)
+        prev = prev->next;
+
+    temp = prev->next;
+    printf("Deleted element: %d\n", temp->data);
+
+    prev->next = temp->next;
+    free(temp);
+
+        return first;
+
+if (first == NULL || first->next == first)
+        return first;
+
+    NODE prev = NULL, curr = first, nextNode;
+    NODE last = first;
+
+    do {
+        nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+    } while (curr != first);
+
+    first->next = prev;
+    return prev;
+
+if (first == NULL)
+        return second;
+    if (second == NULL)
+        return first;
+
+    NODE temp1 = first;
+    while (temp1->next != first)
+        temp1 = temp1->next;
+
+    NODE temp2 = second;
+    while (temp2->next != second)
+        temp2 = temp2->next;
+
+    temp1->next = second;
+    temp2->next = first;
+
+    return first;
+
+
+
